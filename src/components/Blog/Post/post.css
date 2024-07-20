@@ -1,0 +1,75 @@
+.post {
+    background-color: var(--background-color-secondary);
+    padding: var(--spacing-l);
+    border-radius: var(--border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-l);
+}
+
+.post__author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-l);
+}
+
+.post__author__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.post__author__details {
+    flex: 1;
+}
+
+.post__author__details__name {
+    font-weight: 500;
+    font-size: var(--font-size-l);
+    margin-bottom: var(--spacing-xs);
+}
+
+.post__author__details__time {
+    color: var(--text-color-4);
+    font-size: var(--font-size-m);
+}
+
+.post__author__menu {
+    cursor: pointer;
+}
+
+.post__content {
+    padding: var(--spacing-m);
+    border-radius: var(--border-radius-m);
+    background-color: var(--background-color-primary);
+    color: var(--text-color-3);
+    display: flex;
+    gap: var(--spacing-m);
+}
+
+.post__content__category {
+    background-color: #27292D;
+    padding: var(--spacing-m);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.post__content__text {
+    font-size: var(--font-size-l);
+    flex: 1;
+    background-color: var(--background-color-primary);
+    color: var(--text-color-3);
+}
+
+.post__footer__comments {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-m);
+    font-size: var(--font-size-m);
+}
+
+.post__footer__comments span {
+    color: var(--text-color-4);
+}

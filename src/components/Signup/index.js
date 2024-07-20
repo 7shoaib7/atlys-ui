@@ -34,7 +34,7 @@ const Signup = () => {
   
       const user = {
         email: formInput.email,
-        avatar: 'https://randomuser.me/api/portraits/women/43.jpg',
+        avatar: 'https://randomuser.me/api/portraits/med/men/96.jpg',
         username: formInput.username,
         id: 3,
         token: 'randomtoken'
