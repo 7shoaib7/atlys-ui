@@ -1,0 +1,23 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-s);
+}
+
+.input__label {
+    color: var(--text-color-2);
+}
+
+.input__box {
+    width: -webkit-fill-available;
+    padding: var(--spacing-s);
+    border-radius: var(--border-radius-m);
+    border: 1.5px solid #35373B;
+    background-color: var(--background-color-secondary);
+    color: var(--text-color-1);
+}
+
+.input__box::placeholder {
+    color: var(--text-color-3);
+}

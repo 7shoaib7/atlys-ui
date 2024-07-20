@@ -1,0 +1,31 @@
+.button {
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.button--primary {
+    background-color: var(--primary-color);
+    color: var(--text-color-1);
+    border-radius: var(--border-radius-m);
+}
+
+.button--primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.button--small {
+    padding: var(--spacing-xxs);
+    font-size: var(--font-size-s);
+}
+
+.button--medium {
+    padding: var(--spacing-xs);
+    font-size: var(--font-size-m);
+}
+
+.button--large {
+    padding: var(--spacing-s);
+    font-size: var(--font-size-l);
+}
