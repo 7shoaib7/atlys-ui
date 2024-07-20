@@ -1,35 +1,37 @@
-.signup {
+.login {
     color: var(--text-color-1);
     background-color: var(--background-color-secondary);
+    width: 100%;
 }
 
-.signup__header {
+.login__header {
     font-size: var(--font-size-m);
     color: var(--text-color-4);
     margin-top: var(--spacing-xl);
     text-align: center;
 }
 
-.signup__title {
+.login__title {
     font-size: var(--font-size-xl);
     margin-bottom: 40px;
     text-align: center;
 }
 
-.signup__form {
+.login__form {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-l);
 }
 
-.signup__footer {
+.login__footer {
     margin-bottom: 30px;
     color: var(--text-color-3);
     text-align: left;
     font-size: var(--font-size-m);
+    margin-left:0.5rem
 }
 
-.signup__footer__action {
+.login__footer__action {
     margin-left: var(--spacing-xxs);
     color: var(--text-color-2);
     text-decoration: none;

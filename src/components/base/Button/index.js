@@ -1,3 +1,5 @@
+import "./button.css";
+
 const getButtonClass = (variant, size) => {
     const buttonClass = 'button';
     let buttonVariantClass = buttonClass;

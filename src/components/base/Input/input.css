@@ -5,8 +5,22 @@
     gap: var(--spacing-s);
 }
 
-.input__label {
+.input__label__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input__label,
+.input__label__forgot {
     color: var(--text-color-2);
+    font-size: var(--font-size-m);
+}
+
+.input__container {
+    width: 100%;
+    position: relative;
 }
 
 .input__box {
@@ -20,4 +34,11 @@
 
 .input__box::placeholder {
     color: var(--text-color-3);
+}
+
+.input__password__icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    cursor: pointer;
 }
