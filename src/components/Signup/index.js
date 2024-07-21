@@ -27,7 +27,6 @@ const Signup = () => {
     const onSubmit = (event) => {
       event.preventDefault();
   
-      // Make API call to create account
       if (formInput.email === '' || formInput.username === '' || formInput.password === '') {
         return;
       }
