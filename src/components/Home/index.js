@@ -5,8 +5,10 @@ import Signup from '../Signup';
 import Login from '../Login';
 import logo from '../../assets/images/logo.svg';
 import './home.css';
+import { useLogin } from '../../context/LoginContext';
 
-const Home = ({currentUser} ) => {
+const Home = () => {
+  const {currentUser} = useLogin();
     const navigate = useNavigate();
     const location = useLocation();
 

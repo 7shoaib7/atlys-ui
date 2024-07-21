@@ -34,4 +34,5 @@
     color: var(--text-color-2);
     text-decoration: none;
     margin-left: 0.5rem;
+    cursor: pointer;
 }

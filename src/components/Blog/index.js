@@ -3,14 +3,17 @@ import "./blog.css"
 import { samplePosts } from '../../constants/sample'
 import Post from './Post'
 import CreatePost from './CreatePost'
-import { useNavigate } from 'react-router-dom'
-import { ROUTES } from '../../constants/routes'
 
-const Blog = ({currentUser}) => {
-    const navigate = useNavigate();
+import Modal from '../Modal'
+import { useLogin } from '../../context/LoginContext'
+
+const Blog = () => {
+    const {currentUser,setShowModal,showModal} = useLogin();
     const [posts, setPosts] = useState(samplePosts)
 
+
     // console.log("post", posts)
+    // console.log(currentUser)
 
     const handlePost = (postContent, category) => {
         if(currentUser?.id){
@@ -30,12 +33,14 @@ const Blog = ({currentUser}) => {
               setPosts([newPost, ...posts]);
         }
         else{
-            alert("please login first")
+            // alert("please login first")
+            setShowModal(true)
         }
       };
       
 
     return (
+        <>
         <div className="blog">
             <div className='blog__content'>
                 <h1 className='blog__content__title'>Hello </h1>
@@ -53,6 +58,8 @@ const Blog = ({currentUser}) => {
                 </div>
             </div>
         </div>
+        {showModal && <Modal />}
+        </>
     )
 }
 

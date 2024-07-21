@@ -13,6 +13,7 @@ const CreatePost = ({handlePost}) => {
 
   const onClick = () => {
     if (postContent === '') {
+      alert('Please enter some value');
       return;
     }
 

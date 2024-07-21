@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './login.css';
-import { getUser, login } from '../../services/auth';
+import { getUser, isLoggedIn, login } from '../../services/auth';
 import { ROUTES } from '../../constants/routes';
 import Button from '../../components/base/Button/index'
 import Input from '../../components/base/Input/index'
+import { useLogin } from '../../context/LoginContext';
 
 
 const Login = () => {
+  const { showLogin, setShowLogin, setCurrentUser,setShowModal,showModal } = useLogin();
   const navigate = useNavigate();
-  const location = useLocation();
+
 
   const [formInput, setFormInput] = useState({
     email: '',
@@ -41,19 +43,30 @@ const Login = () => {
 
     if (login()) {
       const userData = getUser()
-      if(userData.email === formInput.email || userData.username === formInput.username){
+      if (userData.email === formInput.email || userData.username === formInput.username) {
+        setShowModal(false)
+        setCurrentUser(userData)
         navigate(ROUTES.BLOG);
       }
-      else{
+      else {
         alert("Please verify your credentials")
         return
       }
     }
-    else{
+    else {
       alert("Username or Email doesn't exist register an account")
       return
     }
   };
+
+  const handleRegister = () => {
+    if (!isLoggedIn() && showModal ) {
+      setShowLogin(!showLogin)
+    }
+    else {
+      navigate(ROUTES.SIGNUP)
+    }
+  }
 
   return (
     <div className='login'>
@@ -87,14 +100,20 @@ const Login = () => {
           />
         </div>
         <div className='login__footer'>
-          Not registered yet?
-          <Link
+          <span>Not registered yet?</span>
+
+          {/* <Link
             className='login__footer__action'
             to={ROUTES.SIGNUP}
-            // state={{ previousLocation: location.state?.previousLocation }}
           >
             Register →
-          </Link>
+          </Link> */}
+          <apan
+            className='login__footer__action'
+            onClick={handleRegister}
+          >
+            Register →
+          </apan>
         </div>
       </form>
     </div>

@@ -7,12 +7,9 @@ import Blog from "../Blog";
 
 const Navigation = () => {
   const navigate = useNavigate();
-  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     if (isLoggedIn()) {
-      const user = getUser();
-      setCurrentUser(user);
       navigate(ROUTES.BLOG)
     }
   }, []);
@@ -20,10 +17,10 @@ const Navigation = () => {
   return (
     <>
       <Routes>
-        <Route path={ROUTES.HOME} element={<Home currentUser={currentUser} />} />
-        <Route path={ROUTES.LOGIN} element={<Home currentUser={currentUser} />} />
-        <Route path={ROUTES.SIGNUP} element={<Home currentUser={currentUser} />} />
-        <Route path={ROUTES.BLOG} element={<Blog currentUser={currentUser}/>} />
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.LOGIN} element={<Home />} />
+        <Route path={ROUTES.SIGNUP} element={<Home  />} />
+        <Route path={ROUTES.BLOG} element={<Blog />} />
       </Routes>
     </>
   );

@@ -1,0 +1,44 @@
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+}
+
+
+.modal__content {
+    margin: 15% auto;
+    padding: 20px;
+    /* width: 100%; */
+    max-width: 415px;
+    border-radius: var(--border-radius-l);
+    border: 2px solid #969696;
+    background-color: var(--background-color-secondary);
+    position: relative;
+    animation: modalFadeIn 0.3s ease; 
+}
+
+.modal__content__close {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+@keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
