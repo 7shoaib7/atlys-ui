@@ -8,18 +8,8 @@ import './home.css';
 import { useLogin } from '../../context/LoginContext';
 
 const Home = () => {
-  const {currentUser} = useLogin();
-    const navigate = useNavigate();
     const location = useLocation();
 
-  
-    useEffect(() => {
-      if (currentUser) {
-        // Redirect to blog page
-        navigate(ROUTES.BLOG);
-      }
-    }, [currentUser,navigate]);
-  
     return (
       <div className='home'>
         <Link to={ROUTES.BLOG}>
