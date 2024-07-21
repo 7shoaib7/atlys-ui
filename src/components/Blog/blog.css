@@ -43,3 +43,11 @@
       width: 90%;
     }
   }
+
+
+  .blog__logout {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
