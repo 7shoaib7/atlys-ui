@@ -10,15 +10,14 @@ const Blog = ({currentUser}) => {
     const navigate = useNavigate();
     const [posts, setPosts] = useState(samplePosts)
 
-    console.log("post", posts)
+    // console.log("post", posts)
 
     const handlePost = (postContent, category) => {
-        // Check if not logged in and redirect to login page
         if (!currentUser?.id) {
-          navigate(ROUTES.LOGIN, { state: { previousLocation: ROUTES.BLOG } });
-          return;
-        }
-      
+            navigate(ROUTES.LOGIN, { state: { previousLocation: ROUTES.BLOG } });
+            return;
+          }
+
         const newPost = {
           id: Math.floor(100 * Math.random()),
           content: postContent,

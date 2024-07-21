@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './login.css';
-import { login } from '../../services/auth';
+import { getUser, login } from '../../services/auth';
 import { ROUTES } from '../../constants/routes';
 import Button from '../../components/base/Button/index'
 import Input from '../../components/base/Input/index'
@@ -39,8 +39,19 @@ const Login = () => {
       token: 'randomtoken'
     };
 
-    if (login(user)) {
-      navigate(ROUTES.BLOG);
+    if (login()) {
+      const userData = getUser()
+      if(userData.email === formInput.email || userData.username === formInput.username){
+        navigate(String(location.state?.previousLocation ?? ROUTES.BLOG));
+      }
+      else{
+        alert("Please verify your credentials")
+        return
+      }
+    }
+    else{
+      alert("Username or Email doesn't exist register an account")
+      return
     }
   };
 
@@ -80,7 +91,7 @@ const Login = () => {
           <Link
             className='login__footer__action'
             to={ROUTES.SIGNUP}
-            // state={{ previousLocation: location.state?.previousLocation }}
+            state={{ previousLocation: location.state?.previousLocation }}
           >
             Register →
           </Link>

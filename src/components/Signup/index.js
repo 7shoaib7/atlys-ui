@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './signup.css';
-import { login } from '../../services/auth';
+import { registerUser } from '../../services/auth';
 import { ROUTES } from '../../constants/routes';
 import Button from '../../components/base/Button/index'
 import Input from '../../components/base/Input/index'
@@ -40,9 +40,10 @@ const Signup = () => {
         token: 'randomtoken'
       };
   
-      if (login(user)) {
-        navigate(String(location.state?.previousLocation ?? ROUTES.BLOG));
+      if(registerUser(user)) {
+        navigate(ROUTES.LOGIN)
       }
+
     };
   
     return (
