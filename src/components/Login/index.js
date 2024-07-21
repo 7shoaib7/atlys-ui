@@ -42,7 +42,7 @@ const Login = () => {
     if (login()) {
       const userData = getUser()
       if(userData.email === formInput.email || userData.username === formInput.username){
-        navigate(String(location.state?.previousLocation ?? ROUTES.BLOG));
+        navigate(ROUTES.BLOG);
       }
       else{
         alert("Please verify your credentials")
@@ -91,7 +91,7 @@ const Login = () => {
           <Link
             className='login__footer__action'
             to={ROUTES.SIGNUP}
-            state={{ previousLocation: location.state?.previousLocation }}
+            // state={{ previousLocation: location.state?.previousLocation }}
           >
             Register →
           </Link>

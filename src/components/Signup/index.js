@@ -88,7 +88,7 @@ const Signup = () => {
             <Link
               className='signup__footer__action'
               to={ROUTES.LOGIN}
-              state={{ previousLocation: location.state?.previousLocation }}
+              // state={{ previousLocation: location.state?.previousLocation }}
             >
               Login →
             </Link>

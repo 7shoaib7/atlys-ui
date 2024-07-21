@@ -13,25 +13,25 @@ const Blog = ({currentUser}) => {
     // console.log("post", posts)
 
     const handlePost = (postContent, category) => {
-        if (!currentUser?.id) {
-            navigate(ROUTES.LOGIN, { state: { previousLocation: ROUTES.BLOG } });
-            return;
-          }
-
-        const newPost = {
-          id: Math.floor(100 * Math.random()),
-          content: postContent,
-          category,
-          createdAt: new Date().toISOString(),
-          author: {
-            id: currentUser.id,
-            name: currentUser.username,
-            avatar: currentUser.avatar ?? 'https://randomuser.me/api/portraits/women/43.jpg'
-          },
-          commentsCount: 0
-        };
-      
-        setPosts([newPost, ...posts]);
+        if(currentUser?.id){
+            const newPost = {
+                id: Math.floor(100 * Math.random()),
+                content: postContent,
+                category,
+                createdAt: new Date().toISOString(),
+                author: {
+                  id: currentUser.id,
+                  name: currentUser.username,
+                  avatar: currentUser.avatar ?? 'https://randomuser.me/api/portraits/women/43.jpg'
+                },
+                commentsCount: 0
+              };
+            
+              setPosts([newPost, ...posts]);
+        }
+        else{
+            alert("please login first")
+        }
       };
       
 
