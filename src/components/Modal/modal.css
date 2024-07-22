@@ -6,13 +6,15 @@
     width: 100%;
     height: 100%;
     backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 
 .modal__content {
-    margin: 15% auto;
     padding: 20px;
-    /* width: 100%; */
+    width: 100%;
     max-width: 415px;
     border-radius: var(--border-radius-l);
     border: 2px solid #969696;
@@ -42,3 +44,16 @@
     }
   }
   
+  @media (max-width: 768px) {
+    .modal__content  {
+      margin: 0 15px; 
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal__content {
+      margin: 0 10px;
+      width: 95%;
+    }
+  }

@@ -7,17 +7,12 @@ import CreatePost from './CreatePost'
 import Modal from '../Modal'
 import { useLogin } from '../../context/LoginContext'
 import { logout } from '../../services/auth'
-import { ROUTES } from '../../constants/routes'
-import { useNavigate } from 'react-router-dom'
 
 const Blog = () => {
     const { currentUser,setCurrentUser, setShowModal, showModal } = useLogin();
     const [posts, setPosts] = useState(samplePosts)
-    const navigate = useNavigate()
 
 
-    // console.log("post", posts)
-    // console.log(currentUser)
 
     const handlePost = (postContent, category) => {
         if (currentUser?.id) {
@@ -46,6 +41,7 @@ const Blog = () => {
     const handleLogout = ()=>{
           logout()
           setCurrentUser(null)
+          setPosts(samplePosts)
     }
 
     return (
